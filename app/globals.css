@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+:root {
+    /* Backgrounds */
+    --bg: #050816;
+    --surface: #0B1120;
+    --card: #111827;
+    --card-hover: #1A2332;
+
+    /* Primary */
+    --primary: #3B82F6;
+    --primary-hover: #2563EB;
+    --primary-light: #60A5FA;
+    --cyan: #38BDF8;
+
+    /* Text */
+    --text: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --muted: #94A3B8;
+
+    /* Borders */
+    --border: rgba(255,255,255,.08);
+
+    /* Shadows */
+    --shadow: rgba(0,0,0,.35);
+    --glow: rgba(59,130,246,.35);
+
+    /* Success */
+    --success: #22C55E;
+
+    /* Radius */
+    --radius: 18px;
+}
