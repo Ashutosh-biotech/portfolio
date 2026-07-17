@@ -6,7 +6,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 
 function Navbar(): React.JSX.Element {
     return (
-        <div className={"flex px-10 py-7 justify-between backdrop-blur-md sticky  z-50"}>
+        <div className={"flex px-10 py-7 justify-between backdrop-blur-md fixed w-screen z-50"}>
             <div className={"flex gap-3 items-center"}>
                 <Image src={logo} alt={"My Name shortform \"AK\" as a Logo"} height={32} width={32} draggable={false}/>
                 <span className={"text-(--text) text-2xl"}>Ashutosh Kumar</span>
