@@ -3,10 +3,10 @@ import HeroSocials from "./HeroSocials";
 
 export default function HeroContent() {
     return (
-        <div className="max-w-[680px]">
+        <div className="max-w-170">
             {/* Greeting */}
             <p className="mb-4 text-lg font-medium text-(--primary)">
-                Hi, I'm
+                Hi, I&#39;m
             </p>
 
             {/* Name */}

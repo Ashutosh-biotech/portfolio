@@ -25,7 +25,6 @@ export default function HeroLaptop() {
                     w-full
                     rounded-full
                     blur-3xl
-
                     opacity-30
                     border border-gray-200
                 "
@@ -54,6 +53,7 @@ export default function HeroLaptop() {
                         w-full
                         object-contain
                     "
+                    draggable={false}
                 />
             </div>
         </div>

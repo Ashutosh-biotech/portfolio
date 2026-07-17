@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
+import {FiArrowRight} from "react-icons/fi";
 
 export default function HeroButtons() {
     return (
@@ -11,7 +11,7 @@ export default function HeroButtons() {
                     items-center
                     gap-2
                     rounded-xl
-                    bg-[var(--primary)]
+                    bg-(--primary)
                     px-7
                     py-3.5
                     font-semibold
@@ -19,13 +19,13 @@ export default function HeroButtons() {
                     transition-all
                     duration-300
                     hover:-translate-y-1
-                    hover:bg-[var(--primary-hover)]
+                    hover:bg-(--primary-hover)
                     hover:shadow-[0_0_35px_var(--glow)]
                 "
             >
                 View My Work
 
-                <FiArrowRight />
+                <FiArrowRight/>
             </Link>
 
             <Link
@@ -33,16 +33,16 @@ export default function HeroButtons() {
                 className="
                     rounded-xl
                     border
-                    border-[var(--border)]
-                    bg-[var(--card)]
+                    border-(--border)
+                    bg-(--card)
                     px-7
                     py-3.5
                     font-semibold
-                    text-[var(--text)]
+                    text-(--text)
                     transition-all
                     duration-300
                     hover:-translate-y-1
-                    hover:bg-[var(--card-hover)]
+                    hover:bg-(--card-hover)
                 "
             >
                 Get In Touch

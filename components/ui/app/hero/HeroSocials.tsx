@@ -47,15 +47,15 @@ export default function HeroSocials() {
                         justify-center
                         rounded-full
                         border
-                        border-[var(--border)]
-                        bg-[var(--card)]
+                        border-(--border)
+                        bg-(--card)
                         text-xl
-                        text-[var(--text-secondary)]
+                        text-(--text-secondary)
                         transition-all
                         duration-300
                         hover:-translate-y-1
-                        hover:border-[var(--primary)]
-                        hover:text-[var(--primary)]
+                        hover:border-(--primary)
+                        hover:text-(--primary)
                         hover:shadow-[0_0_25px_var(--glow)]
                     "
                 >

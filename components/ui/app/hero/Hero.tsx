@@ -8,7 +8,7 @@ export default function Hero() :React.JSX.Element {
             <HeroBackground />
 
             <div className="container mx-auto px-6">
-                <div className="relative min-h-[620px] flex items-center">
+                <div className="relative min-h-155 flex items-center">
 
                     {/* Left Content */}
                     <div className="relative z-20 max-w-2xl">
