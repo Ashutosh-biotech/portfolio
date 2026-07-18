@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import logo from "@/assets/images/favicon-48x48.png";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
@@ -22,9 +23,31 @@ const NavItems: NavItemInterface[] = [
 ];
 
 function Navbar(): React.JSX.Element {
+    const pathname = usePathname();
     const [active, setActive] = useState<number>(0);
     const [mobileOpen, setMobileOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (pathname === "/projects") {
+            setActive(2); // "Projects" is index 2
+        } else {
+            const handleHashChange = () => {
+                const hash = window.location.hash || "#home";
+                const foundIndex = NavItems.findIndex(item => item.href.endsWith(hash));
+                if (foundIndex !== -1) {
+                    setActive(foundIndex);
+                }
+            };
+            handleHashChange();
+            window.addEventListener("hashchange", handleHashChange);
+            window.addEventListener("popstate", handleHashChange);
+            return () => {
+                window.removeEventListener("hashchange", handleHashChange);
+                window.removeEventListener("popstate", handleHashChange);
+            };
+        }
+    }, [pathname]);
 
     useEffect(() => {
         const handleScroll = () => {
