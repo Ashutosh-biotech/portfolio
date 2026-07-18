@@ -63,12 +63,13 @@ export default function AboutMe() {
                     {/* Left: Image + Text */}
                     <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start">
                         {/* Profile Image */}
-                        <div className="relative flex-shrink-0">
+                        <div className="relative shrink-0">
                             <div className="relative h-48 w-48 sm:h-56 sm:w-56 rounded-2xl overflow-hidden border-2 border-(--primary)/30 animate-pulse-glow">
                                 <Image
                                     src="/profile.png"
                                     alt="Ashutosh Kumar"
                                     fill
+                                    sizes="(max-width: 640px) 192px, 224px"
                                     className="object-cover"
                                 />
                             </div>
@@ -91,12 +92,12 @@ export default function AboutMe() {
                                         key={i}
                                         className="flex items-center gap-2 text-(--text-secondary)"
                                     >
-                                        <FiCheckCircle className="text-(--success) flex-shrink-0" />
+                                        <FiCheckCircle className="text-(--success) shrink-0" />
                                         <span className="text-sm">{item}</span>
                                     </li>
                                 ))}
                                 <li className="flex items-center gap-2">
-                                    <FiCheckCircle className="text-(--success) flex-shrink-0" />
+                                    <FiCheckCircle className="text-(--success) shrink-0" />
                                     <span className="text-sm text-(--primary) underline underline-offset-4 cursor-pointer hover:text-(--primary-light) transition-colors">
                                         Open to Remote Opportunities
                                     </span>
