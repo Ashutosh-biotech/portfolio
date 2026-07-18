@@ -3,7 +3,7 @@ import HeroSocials from "./HeroSocials";
 
 export default function HeroContent() {
     return (
-        <div className="max-w-170">
+        <div className="mx-auto max-w-170 text-center lg:mx-0 lg:text-left">
             {/* Greeting */}
             <p className="mb-4 text-lg font-medium text-(--primary)">
                 Hi, I&#39;m
@@ -25,7 +25,8 @@ export default function HeroContent() {
                         font-black
                         sm:text-6xl
                         lg:-mt-3
-                        lg:ml-20
+                        lg:ml-24
+                        xl:ml-28
                         lg:text-7xl
                         bg-linear-to-r
                         from-(--primary)

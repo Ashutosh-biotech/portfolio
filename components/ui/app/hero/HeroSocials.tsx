@@ -34,7 +34,7 @@ const socials = [
 
 export default function HeroSocials() {
     return (
-        <div className="mt-12 flex items-center gap-5">
+        <div className="mt-12 flex items-center justify-center gap-5 lg:justify-start">
             {socials.map(({ icon: Icon, href }, index) => (
                 <Link
                     key={index}

@@ -2,29 +2,43 @@ import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import HeroLaptop from "./HeroLaptop";
 
-export default function Hero() :React.JSX.Element {
+export default function Hero() {
     return (
-        <section className="relative overflow-hidden py-24 lg:py-36">
-            <HeroBackground />
+        <section className="relative overflow-hidden">
+            {/* Desktop Background */}
+            <div className="hidden lg:block">
+                <HeroBackground />
+            </div>
 
-            <div className="container mx-auto px-6">
-                <div className="relative min-h-155 flex items-center">
+            <div className="mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24 lg:px-8">
+                <div className="relative flex w-full flex-col lg:min-h-180 lg:flex-row lg:items-center">
 
-                    {/* Left Content */}
-                    <div className="relative z-20 max-w-2xl">
+                    {/* Content */}
+                    <div className="relative z-30 w-full lg:max-w-162.5">
                         <HeroContent />
                     </div>
 
-                    {/* Laptop */}
-                    <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 z-10">
+                    {/* Desktop Laptop */}
+                    <div
+                        className="
+                            hidden
+                            lg:block
+                            absolute
+                            right-0
+                            top-1/2
+                            z-20
+                            -translate-y-1/2
+                            translate-x-16
+                        "
+                    >
                         <HeroLaptop />
                     </div>
 
-                </div>
+                    {/* Mobile / Tablet Laptop */}
+                    <div className="relative mt-14 flex justify-center lg:hidden">
+                        <HeroLaptop />
+                    </div>
 
-                {/* Mobile Laptop */}
-                <div className="mt-16 lg:hidden">
-                    <HeroLaptop />
                 </div>
             </div>
         </section>

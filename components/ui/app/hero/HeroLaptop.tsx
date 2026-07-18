@@ -7,55 +7,49 @@ export default function HeroLaptop() {
         <div
             className="
                 relative
-                w-155
-                xl:w-190
-                2xl:w-205
-                animate-hero-float
+                w-full
+                max-w-[380px]
+                sm:max-w-[500px]
+                md:max-w-[620px]
+                lg:w-[700px]
+                xl:w-[780px]
+                lg:animate-hero-float
                 select-none
             "
         >
-            {/* Shadow */}
+            {/* Glow underneath */}
             <div
                 className="
                     absolute
                     left-1/2
                     bottom-6
+                    h-12
+                    w-2/3
                     -translate-x-1/2
-                    h-1/2
-                    w-full
                     rounded-full
-                    blur-3xl
+                    blur-[45px]
                     opacity-30
-                    border border-gray-200
                 "
                 style={{
                     background: "var(--primary)",
                 }}
             />
 
-            {/* Image */}
-            <div
+            <Image
+                src={LaptopImage}
+                alt="Laptop"
+                priority
                 className="
                     relative
-                    overflow-hidden
-                    rounded-2xl
+                    h-auto
+                    w-full
+                    object-contain
+                    drop-shadow-[0_30px_50px_rgba(0,0,0,.45)]
                     transition-transform
                     duration-500
-                    hover:scale-[1.015]
+                    lg:hover:scale-[1.02]
                 "
-            >
-                <Image
-                    src={LaptopImage}
-                    alt="Laptop workspace"
-                    priority
-                    className="
-                        h-auto
-                        w-full
-                        object-contain
-                    "
-                    draggable={false}
-                />
-            </div>
+            />
         </div>
     );
 }
