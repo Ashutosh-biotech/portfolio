@@ -9,7 +9,7 @@ import { FiSend } from "react-icons/fi";
 const contactLinks = [
     { icon: MdEmail, label: "ashutosh.kumar@example.com", href: "mailto:ashutosh.kumar@example.com" },
     { icon: FaLinkedin, label: "linkedin.com/in/ashutosh-kumar", href: "https://linkedin.com/in/ashutosh-kumar" },
-    { icon: FaGithub, label: "github.com/ashutosh-kumar", href: "https://github.com/ashutosh-kumar" },
+    { icon: FaGithub, label: "github.com/Ashutosh-biotech", href: "https://github.com/Ashutosh-biotech" },
 ];
 
 export default function ContactForm() {

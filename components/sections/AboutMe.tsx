@@ -1,29 +1,9 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FiCheckCircle } from "react-icons/fi";
 import { HiOutlineAcademicCap, HiOutlineCode, HiOutlineBriefcase, HiOutlineCube } from "react-icons/hi";
-
-const stats = [
-    {
-        icon: HiOutlineBriefcase,
-        value: "10+",
-        label: "Projects Completed",
-    },
-    {
-        icon: HiOutlineAcademicCap,
-        value: "1+",
-        label: "Years of Experience",
-    },
-    {
-        icon: HiOutlineCode,
-        value: "200+",
-        label: "GitHub Contributions",
-    },
-    {
-        icon: HiOutlineCube,
-        value: "10+",
-        label: "Technologies",
-    },
-];
 
 const highlights = [
     "BCA Graduate (IGNOU)",
@@ -31,6 +11,47 @@ const highlights = [
 ];
 
 export default function AboutMe() {
+    const [contributions, setContributions] = useState<string>("350+");
+
+    useEffect(() => {
+        async function fetchStats() {
+            try {
+                const res = await fetch("https://github-contributions-api.deno.dev/Ashutosh-biotech.json");
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.totalContributions) {
+                        setContributions(`${data.totalContributions}+`);
+                    }
+                }
+            } catch (e) {
+                console.error("Error fetching contributions for AboutMe stats:", e);
+            }
+        }
+        fetchStats();
+    }, []);
+
+    const stats = [
+        {
+            icon: HiOutlineBriefcase,
+            value: "10+",
+            label: "Projects Completed",
+        },
+        {
+            icon: HiOutlineAcademicCap,
+            value: "1+",
+            label: "Years of Experience",
+        },
+        {
+            icon: HiOutlineCode,
+            value: contributions,
+            label: "GitHub Contributions",
+        },
+        {
+            icon: HiOutlineCube,
+            value: "10+",
+            label: "Technologies",
+        },
+    ];
     return (
         <section className="py-20 lg:py-28 bg-(--surface)" id="about">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
