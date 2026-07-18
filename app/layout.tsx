@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import {Navbar} from "@/components/layout/app/navbar";
+import {Footer} from "@/components/sections";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -14,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Ashutosh Kumar Portfolio',
-    description: 'Java Full Stack Developer Portfolio',
+    title: 'Ashutosh Kumar | Java Full Stack Developer Portfolio',
+    description: 'Java Full Stack Developer specializing in Spring Boot, Next.js, React, and microservices architecture. View projects, skills, and get in touch.',
+    keywords: ['Java Developer', 'Full Stack Developer', 'Spring Boot', 'Next.js', 'React', 'Portfolio'],
 };
 
 export default function RootLayout({
@@ -30,7 +32,10 @@ export default function RootLayout({
         >
         <body className="min-h-full flex flex-col">
         <Navbar/>
-        {children}
+        <div className="flex-1">
+            {children}
+        </div>
+        <Footer/>
         </body>
         </html>
     );
