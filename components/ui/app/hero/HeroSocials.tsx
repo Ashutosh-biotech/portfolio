@@ -16,7 +16,7 @@ import {
 const socials = [
     {
         icon: FaGithub,
-        href: "#",
+        href: "https://github.com/Ashutosh-biotech",
     },
     {
         icon: FaLinkedin,

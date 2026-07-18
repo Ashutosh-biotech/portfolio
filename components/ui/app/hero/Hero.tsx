@@ -4,7 +4,7 @@ import HeroLaptop from "./HeroLaptop";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden">
+        <section className="relative overflow-hidden" id="home">
             {/* Desktop Background */}
             <div className="hidden lg:block">
                 <HeroBackground />
