@@ -2,74 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink, FiArrowRight } from "react-icons/fi";
-import {
-    SiSpringboot,
-    SiNextdotjs,
-    SiPostgresql,
-    SiRedis,
-    SiDocker,
-    SiJsonwebtokens,
-    SiReact,
-    SiNodedotjs,
-    SiMongodb,
-    SiTailwindcss,
-    SiSocketdotio,
-} from "react-icons/si";
-import { TbBrandGatsby } from "react-icons/tb";
+import { projectsData } from "@/data/projects";
 
-const projects = [
-    {
-        title: "Hotel Booking Platform",
-        label: "HAVEN",
-        labelColor: "#22C55E",
-        description:
-            "A full-featured RESTful booking platform with user authentication, search, booking, reviews and payment integration.",
-        image: "/haven.png",
-        techIcons: [
-            { icon: SiSpringboot, name: "Spring Boot" },
-            { icon: SiNextdotjs, name: "Next.js" },
-            { icon: SiPostgresql, name: "PostgreSQL" },
-            { icon: SiRedis, name: "Redis" },
-            { icon: SiDocker, name: "Docker" },
-        ],
-        github: "#",
-        demo: "#",
-    },
-    {
-        title: "Microservices API Gateway",
-        label: "API GATEWAY",
-        labelColor: "#EF4444",
-        description:
-            "API Gateway for routing, load balancing, rate limiting and authentication for microservices architecture.",
-        image: "/api-gateway.png",
-        techIcons: [
-            { icon: SiSpringboot, name: "Spring Cloud" },
-            { icon: TbBrandGatsby, name: "Gateway" },
-            { icon: SiJsonwebtokens, name: "JWT" },
-            { icon: SiDocker, name: "Docker" },
-            { icon: SiRedis, name: "Eureka" },
-        ],
-        github: "#",
-        demo: "#",
-    },
-    {
-        title: "Task Management App",
-        label: "TASK MANAGER",
-        labelColor: "#A855F7",
-        description:
-            "A productivity app to manage tasks, projects and teams with real-time updates.",
-        image: "/task-manager.png",
-        techIcons: [
-            { icon: SiReact, name: "React" },
-            { icon: SiNodedotjs, name: "Node.js" },
-            { icon: SiMongodb, name: "MongoDB" },
-            { icon: SiSocketdotio, name: "Socket.io" },
-            { icon: SiTailwindcss, name: "Tailwind" },
-        ],
-        github: "#",
-        demo: "#",
-    },
-];
+// Show first 3 projects or only the ones flagged as featured
+const featuredProjects = projectsData.filter(p => p.featured !== false).slice(0, 3);
 
 export default function FeaturedProjects() {
     return (
@@ -81,17 +17,17 @@ export default function FeaturedProjects() {
                         Featured Projects
                     </h2>
                     <Link
-                        href="#"
-                        className="hidden sm:flex items-center gap-2 text-sm font-medium text-(--primary) hover:text-(--primary-light) transition-colors duration-300"
+                        href="/projects"
+                        className="hidden sm:flex items-center gap-2 rounded-full border border-(--primary)/40 bg-(--primary)/5 px-5 py-2 text-sm font-semibold text-(--primary-light) transition-all duration-300 hover:bg-(--primary) hover:text-white hover:border-(--primary) hover:shadow-[0_0_20px_var(--glow)] hover:-translate-y-0.5 group"
                     >
                         View All Projects
-                        <FiArrowRight />
+                        <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                 </div>
 
                 {/* Project Cards */}
                 <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project, i) => (
+                    {featuredProjects.map((project, i) => (
                         <div
                             key={i}
                             className="group rounded-2xl border border-(--border) bg-(--card) overflow-hidden transition-all duration-300 hover:border-(--primary)/30 hover:-translate-y-2 hover:shadow-[0_0_50px_var(--glow)]"
@@ -162,8 +98,8 @@ export default function FeaturedProjects() {
                 {/* Mobile View All */}
                 <div className="mt-8 sm:hidden text-center">
                     <Link
-                        href="#"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-(--primary) hover:text-(--primary-light) transition-colors duration-300"
+                        href="/projects"
+                        className="inline-flex items-center gap-2 rounded-full border border-(--primary)/40 bg-(--primary)/5 px-6 py-2.5 text-sm font-semibold text-(--primary-light) transition-all duration-300 hover:bg-(--primary) hover:text-white hover:border-(--primary) hover:shadow-[0_0_20px_var(--glow)]"
                     >
                         View All Projects
                         <FiArrowRight />

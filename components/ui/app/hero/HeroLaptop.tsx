@@ -13,7 +13,7 @@ export default function HeroLaptop() {
                 md:max-w-[620px]
                 lg:w-[700px]
                 xl:w-[780px]
-                lg:animate-hero-float
+                animate-hero-float
                 select-none
             "
         >

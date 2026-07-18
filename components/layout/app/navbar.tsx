@@ -13,12 +13,12 @@ interface NavItemInterface {
 }
 
 const NavItems: NavItemInterface[] = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Contact", href: "/#contact" },
 ];
 
 function Navbar(): React.JSX.Element {
@@ -53,7 +53,7 @@ function Navbar(): React.JSX.Element {
         >
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
                 {/* Logo */}
-                <Link href="#home" className="flex items-center gap-3">
+                <Link href="/#home" className="flex items-center gap-3">
                     <Image
                         src={logo}
                         alt={'My Name shortform "AK" as a Logo'}
