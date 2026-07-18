@@ -3,6 +3,7 @@ import {
     WhatIBuild,
     FeaturedProjects,
     TechStack,
+    Experience,
     AboutMe,
     ContactSection,
 } from "@/components/sections";
@@ -17,6 +18,8 @@ export default function Home() {
             <FeaturedProjects />
             <div className="section-divider" />
             <TechStack />
+            <div className="section-divider" />
+            <Experience />
             <div className="section-divider" />
             <AboutMe />
             <div className="section-divider" />

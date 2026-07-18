@@ -25,7 +25,7 @@ const features = [
 
 export default function WhatIBuild() {
     return (
-        <section className="py-20 lg:py-28" id="experience">
+        <section className="py-20 lg:py-28" id="what-i-build">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 className="text-center text-3xl font-bold text-(--text) sm:text-4xl">
                     What I Build
